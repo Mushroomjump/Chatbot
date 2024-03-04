@@ -1,0 +1,1087 @@
+version: "3.1"
+
+intents:
+  # banking services
+  #- absa_account_opening
+  #- hfc_account_opening
+  - bank_of_india_kenya_account_opening
+  - check_balance
+  - transfer_money
+  - apply_for_loan
+  - open_account
+  - report_lost_card
+  - order_checks
+  - update_personal_info
+  - set_travel_notice
+  - schedule_appointment
+  - activate_card
+  - dispute_transaction
+  - request_credit_line_increase
+  - lock_card
+  - unlock_card
+  - pay_credit_card
+  - setup_autopay
+  - cancel_account
+  - redeem_rewards
+  - change_pin
+  - enroll_in_online_banking
+  - download_statement
+  - ask_about_fees
+  - find_atm
+  - ask_interest_rate
+
+  #investment services
+  - inquire_stocks
+  - inquire_bonds
+  - inquire_mutual_funds
+  - inquire_etfs
+  - inquire_index_funds
+  - inquire_stock_options
+  - inquire_dividends
+  - inquire_portfolio_management
+  - inquire_retirement_planning
+  - inquire_tax_advantaged_investing
+  - inquire_education_savings
+  - inquire_real_estate_investing
+  - inquire_commodities
+  - inquire_forex
+  - inquire_crowdfunding
+  - inquire_robo_advisors
+  - inquire_impact_investing
+  - inquire_technical_analysis
+  - inquire_fundamental_analysis
+  - inquire_market_trends
+
+  # insurance services
+  - inquire_life_insurance
+  - inquire_health_insurance
+  - inquire_auto_insurance
+  - inquire_property_insurance
+  - inquire_travel_insurance
+  - inquire_pet_insurance
+  - inquire_disability_insurance
+  - inquire_critical_illness_insurance
+  - inquire_long_term_care_insurance
+  - inquire_renters_insurance
+  - inquire_homeowners_insurance
+  - inquire_liability_insurance
+  - inquire_business_insurance
+  - inquire_marine_insurance
+  - inquire_aviation_insurance
+  - inquire_cyber_security_insurance
+  - inquire_credit_insurance
+  - inquire_mortgage_insurance
+  - inquire_title_insurance
+  - inquire_workers_compensation
+
+  #payment services
+  - process_payment
+  - mobile_payment
+  - peer_to_peer_transfer
+  - inquire_transaction_fee
+  - setup_automatic_payments
+  - cancel_payment
+  - inquire_payment_status
+  - report_payment_issue
+  - request_refund
+  - add_payment_method
+  - remove_payment_method
+  - update_payment_method
+  - confirm_payment_receipt
+  - inquire_exchange_rate
+  - convert_currency
+  - send_invoice
+  - request_payment
+  - split_bill
+  - schedule_payment
+  - check_payment_limit
+
+  #  financial planning
+  - budgeting_tools
+  - financial_advice
+  - retirement_planning
+  - debt_management
+  - savings_plan
+  - investment_strategy
+  - tax_planning
+  - estate_planning
+  - college_savings_plan
+  - emergency_fund_planning
+  - insurance_coverage_review
+  - financial_goal_setting
+  - wealth_preservation
+  - charitable_giving_strategy
+  - mortgage_refinancing
+  - credit_score_improvement
+  - retirement_account_review
+  - financial_health_checkup
+  - cash_flow_analysis
+  - risk_tolerance_assessment
+
+  #blockchain and cryptocurrency
+  - inquire_bitcoin
+  - inquire_ethereum
+  - inquire_blockchain
+  - inquire_crypto_wallet
+  - inquire_crypto_exchange
+  - inquire_crypto_mining
+  - inquire_crypto_security
+  - inquire_initial_coin_offering
+  - inquire_crypto_regulations
+  - inquire_crypto_taxes
+  - inquire_stablecoins
+  - inquire_defi
+  - inquire_nft
+  - inquire_crypto_portfolio
+  - inquire_crypto_trading
+  - inquire_crypto_market_cap
+  - inquire_crypto_price
+  - inquire_crypto_investment
+  - inquire_crypto_savings
+  - inquire_crypto_loans
+
+  # regulatory compliance
+  - regulatory_compliance
+  - anti_money_laundering
+  - know_your_customer
+  - data_protection_compliance
+  - consumer_protection_laws
+  - financial_reporting_standards
+  - compliance_audit
+  - risk_assessment
+  - ethical_investing_standards
+  - trade_compliance
+  - sanctions_screening
+  - anti_bribery_compliance
+  - financial_advisory_regulations
+  - cybersecurity_regulations
+  - insider_trading_monitoring
+  - conflict_of_interest_policy
+  - environmental_compliance
+  - social_governance_compliance
+  - compliance_training
+  - regulatory_filing
+
+# Absa
+  - inquire_absa_reward_program
+  - redeem_absa_reward_points
+  - absa_reward_points_expiry
+  - change_absa_reward_rules
+  - restrict_earning_absa_reward_points
+  - reverse_absa_reward_points
+  - terminate_absa_reward_points
+  - disqualify_absa_participation
+  - change_or_terminate_absa_program
+  - ask_absa_operating_hours
+  - ask_absa_interest_rates
+  - ask_absa_minimum_balance
+  - ask_absa_online_banking
+  - ask_absa_open_account
+  - ask_absa_loan_types
+  - ask_absa_credit_card_options
+  - ask_absa_mortgage_application
+  - ask_absa_investment_services
+  - ask_absa_customer_service
+  - absa_account_opening
+
+# HFC
+  - ask_hfc_operating_hours
+  - ask_hfc_interest_rates
+  - ask_hfc_minimum_balance
+  - ask_hfc_online_banking
+  - ask_hfc_open_account
+  - ask_hfc_loan_types
+  - ask_hfc_credit_card_options
+  - ask_hfc_mortgage_application
+  - ask_hfc_investment_services
+  - ask_hfc_customer_service
+  - hfc_account_opening
+
+# Bank Of India
+  - bank_of_india_account_opening
+
+entities:
+  - account_type
+  - loan_type
+  - investment_type
+  - insurance_type
+  - payment_service
+  - financial_planning_tool
+  - cryptocurrency
+  - compliance_topic
+  - reward program
+  - reward points
+
+slots:
+  account_type:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: account_type
+  loan_type:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: loan_type
+  investment_type:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: investment_type
+  insurance_type:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: insurance_type
+  payment_service:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: payment_service
+  financial_planning_tool:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: financial_planning_tool
+  cryptocurrency:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: cryptocurrency
+  compliance_topic:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: compliance_topic
+
+# Add responses for each entity to guide the user in providing the specific type they are interested in.
+responses:
+  utter_ask_account_type:
+  - text: "What type of account would you like to inquire about? (e.g., checking, savings, business)"
+
+  utter_ask_loan_type:
+  - text: "What type of loan are you interested in? (e.g., personal, mortgage, auto)"
+
+  utter_check_balance:
+  - text: "Your current balance is **$3,500**."
+
+  utter_transfer_money:
+  - text: "Sure! Please provide the recipient's account number and the amount you'd like to transfer."
+
+  utter_apply_for_loan:
+  - text: "Great! To apply for a loan, we'll need some information. Can you provide your income and credit score?"
+
+  utter_open_account:
+  - text: "Welcome! To open an account, please visit our nearest branch with your identification documents."
+
+  utter_report_lost_card:
+  - text: "I'm sorry to hear that your card is lost. Let's block it immediately. Can you confirm your account details?"
+
+  utter_order_checks:
+  - text: "Certainly! You can order checks through our online banking portal or by visiting a branch."
+
+  utter_update_personal_info:
+  - text: "To update your personal information, please log in to your online account and navigate to the profile section."
+
+  utter_set_travel_notice:
+  - text: "Planning a trip? Let us know your travel dates and destinations, and we'll ensure your card works smoothly."
+
+  utter_schedule_appointment:
+  - text: "Certainly! Please provide your preferred date and time, and we'll schedule an appointment for you."
+
+  utter_activate_card:
+  - text: "Congratulations on receiving your new card! You can activate it by calling our customer service or using our mobile app."
+
+  utter_dispute_transaction:
+  - text: "If you notice any unauthorized transactions, please contact us immediately to dispute them."
+
+  utter_request_credit_line_increase:
+  - text: "Interested in increasing your credit limit? Let's review your financials and explore the options."
+
+  utter_lock_card:
+  - text: "To temporarily lock your card for security reasons, log in to your account or call our support."
+
+  utter_unlock_card:
+  - text: "Your card is now unlocked! You can use it for transactions."
+
+  utter_pay_credit_card:
+  - text: "To pay your credit card bill, log in to your account and follow the payment instructions."
+
+  utter_setup_autopay:
+  - text: "Autopay ensures your bills are paid on time. Set it up through your online banking settings."
+
+  utter_cancel_account:
+  - text: "We're sorry to see you go. To close your account, visit a branch or contact our customer service."
+
+  utter_redeem_rewards:
+  - text: "Exciting! You can redeem your rewards points for travel, cashback, or other benefits."
+
+  utter_change_pin:
+  - text: "For security reasons, you can change your card PIN at any ATM or through our mobile app."
+
+  utter_enroll_in_online_banking:
+  - text: "Welcome to online banking! Visit our website to enroll and manage your accounts online."
+
+  utter_download_statement:
+  - text: "You can download your account statement from our website or via our mobile app."
+
+  # ... other responses for banking services
+
+
+  utter_ask_investment_type:
+  - text: "What type of investment are you interested in? (e.g., stocks, bonds, mutual funds)"
+
+  utter_inquire_stocks:
+  - text: "Stocks represent ownership in a company. They can be bought and sold on stock exchanges."
+
+  utter_inquire_bonds:
+  - text: "Bonds are debt securities issued by companies or governments. They pay interest over a fixed period."
+
+  utter_inquire_mutual_funds:
+  - text: "Mutual funds pool money from multiple investors to invest in a diversified portfolio of stocks, bonds, or other assets."
+
+  utter_inquire_etfs:
+  - text: "ETFs are similar to mutual funds but trade on stock exchanges like individual stocks."
+
+  utter_inquire_index_funds:
+  - text: "Index funds track a specific market index (e.g., S&P 500) and aim to replicate its performance."
+
+  utter_inquire_stock_options:
+  - text: "Stock options give you the right (but not the obligation) to buy or sell a stock at a predetermined price."
+
+  utter_inquire_dividends:
+  - text: "Dividends are payments made by companies to shareholders from their profits."
+
+  utter_inquire_portfolio_management:
+  - text: "Portfolio management involves creating and maintaining an investment portfolio based on your goals and risk tolerance."
+
+  utter_inquire_retirement_planning:
+  - text: "Retirement planning focuses on building savings and investments to support your lifestyle after retirement."
+
+  utter_inquire_tax_advantaged_investing:
+  - text: "Tax-advantaged investing includes accounts like IRAs and 401(k)s that offer tax benefits."
+
+  utter_inquire_education_savings:
+  - text: "Education savings plans (e.g., 529 plans) help save for educational expenses like college tuition."
+
+  utter_inquire_real_estate_investing:
+  - text: "Real estate investing involves buying, owning, and managing properties for rental income or appreciation."
+
+  utter_inquire_commodities:
+  - text: "Commodities include physical goods like gold, oil, and agricultural products traded in commodity markets."
+
+  utter_inquire_forex:
+  - text: "Forex trading involves buying and selling currencies in the foreign exchange market."
+
+  utter_inquire_crowdfunding:
+  - text: "Crowdfunding allows individuals to invest in startups or projects through online platforms."
+
+  utter_inquire_robo_advisors:
+  - text: "Robo advisors are automated investment platforms that provide portfolio management based on algorithms."
+
+  utter_inquire_impact_investing:
+  - text: "Impact investing aims to generate positive social or environmental impact alongside financial returns."
+
+  utter_inquire_technical_analysis:
+  - text: "Technical analysis involves analyzing historical price charts to predict future price movements."
+
+  utter_inquire_fundamental_analysis:
+  - text: "Fundamental analysis assesses a company's financial health, management, and industry to evaluate its stock."
+
+  utter_inquire_market_trends:
+  - text: "Market trends refer to the overall direction of stock prices, influenced by various factors such as economic indicators, geopolitical events, and investor sentiment."
+  # ... other responses for investment services
+
+
+  utter_ask_insurance_type:
+  - text: "What type of insurance are you interested in? (e.g., life, health, auto)"
+  utter_inquire_life_insurance:
+  - text: "Life insurance provides financial protection for your loved ones in case of your death. It can help cover funeral expenses, debts, and provide income replacement. Would you like more information about our life insurance policies?"
+
+  utter_inquire_health_insurance:
+  - text: "Health insurance covers medical expenses, including doctor visits, hospital stays, and prescription drugs. We offer various health insurance plans to suit your needs. What specific information are you looking for?"
+
+  utter_inquire_auto_insurance:
+  - text: "Auto insurance protects your vehicle against damage, accidents, and liability. Our policies include coverage for collisions, comprehensive damage, and bodily injury. How can I assist you with your auto insurance?"
+
+  utter_inquire_property_insurance:
+  - text: "Property insurance covers your home or other property against damage, theft, and natural disasters. We offer homeowners' insurance, renters' insurance, and more. What type of property are you interested in insuring?"
+
+  utter_inquire_travel_insurance:
+  - text: "Travel insurance provides coverage for unexpected events during your trip, such as trip cancellations, medical emergencies, and lost baggage. Are you planning a trip soon?"
+
+  utter_inquire_pet_insurance:
+  - text: "Pet insurance helps cover veterinary expenses for your furry companions. It can include routine care, accidents, and illnesses. Do you have any specific questions about pet insurance?"
+
+  utter_inquire_disability_insurance:
+  - text: "Disability insurance provides income replacement if you become disabled and unable to work. It ensures financial stability during challenging times. Would you like details about our disability insurance policies?"
+
+  utter_inquire_critical_illness_insurance:
+  - text: "Critical illness insurance pays a lump sum if you're diagnosed with a serious illness like cancer, heart attack, or stroke. It can help cover medical costs and other expenses. How can I assist you with critical illness insurance?"
+
+  utter_inquire_long_term_care_insurance:
+  - text: "Long-term care insurance covers the costs of nursing homes, assisted living, and in-home care for elderly or disabled individuals. Are you interested in learning more about long-term care insurance?"
+
+  utter_inquire_renters_insurance:
+  - text: "Renters' insurance protects your personal belongings and provides liability coverage while renting a property. It's essential for tenants. What specific information do you need about renters' insurance?"
+
+  utter_inquire_homeowners_insurance:
+  - text: "Homeowners' insurance covers your home, belongings, and liability. It's crucial for homeowners to protect their investment. How can I assist you with homeowners' insurance?"
+
+  utter_inquire_liability_insurance:
+  - text: "Liability insurance protects you from legal claims and lawsuits. It covers bodily injury, property damage, and legal defense costs. What type of liability coverage are you interested in?"
+
+  utter_inquire_business_insurance:
+  - text: "Business insurance provides coverage for businesses, including property, liability, and employee-related risks. Do you own a business or need commercial insurance?"
+
+  utter_inquire_marine_insurance:
+  - text: "Marine insurance covers cargo, ships, and other marine-related risks. It's essential for businesses involved in shipping and transportation. How can I assist you with marine insurance?"
+
+  utter_inquire_aviation_insurance:
+  - text: "Aviation insurance covers aircraft, pilots, and aviation-related risks. It's crucial for aviation companies and private plane owners. What specific information are you looking for?"
+
+  utter_inquire_cyber_security_insurance:
+  - text: "Cyber security insurance protects against data breaches, cyber attacks, and related losses. It's essential for businesses that handle sensitive information. How can I assist you with cyber security insurance?"
+
+  utter_inquire_credit_insurance:
+  - text: "Credit insurance covers outstanding debts in case of death, disability, or unemployment. It ensures your financial obligations are met. What type of credit insurance are you interested in?"
+
+  utter_inquire_mortgage_insurance:
+  - text: "Mortgage insurance protects lenders in case borrowers default on their mortgage payments. It's typically required for low down payment loans. How can I assist you with mortgage insurance?"
+
+  utter_inquire_title_insurance:
+  - text: "Title insurance protects property buyers and lenders against defects in property titles. It ensures a clear title during real estate transactions. What specific details do you need about title insurance?"
+
+  utter_inquire_workers_compensation:
+  - text: "Workers' compensation provides benefits to employees injured on the job. It covers medical expenses, lost wages, and rehabilitation. Are you an employer or an employee seeking workers' compensation information?"
+  # ... other responses for insurance services
+
+
+  utter_ask_payment_service:
+  - text: "Which payment service would you like to use? We offer various options, including credit cards, mobile payments, and peer-to-peer transfers."
+
+  utter_process_payment:
+  - text: "To process a payment, please provide the recipient's details and the amount you'd like to pay."
+
+  utter_mobile_payment:
+  - text: "Mobile payment options include Apple Pay, Google Pay, and Samsung Pay. You can link your card to your mobile wallet for convenient transactions."
+
+  utter_peer_to_peer_transfer:
+  - text: "Peer-to-peer transfers allow you to send money directly to another person's account. What's the recipient's account information?"
+
+  utter_inquire_transaction_fee:
+  - text: "Transaction fees vary based on the type of payment and the service used. Let me know which transaction you're inquiring about."
+
+  utter_setup_automatic_payments:
+  - text: "Automatic payments ensure bills are paid on time. You can set up recurring payments for utilities, rent, or other expenses."
+
+  utter_cancel_payment:
+  - text: "If you need to cancel a payment, contact our customer service or log in to your account to initiate the cancellation."
+
+  utter_inquire_payment_status:
+  - text: "To check the status of a payment, provide the transaction details, and we'll verify its progress."
+
+  utter_report_payment_issue:
+  - text: "If you encounter any payment issues, let us know. We'll investigate and resolve the problem."
+
+  utter_request_refund:
+  - text: "For refunds, contact the merchant or service provider directly. They'll guide you through the process."
+
+  utter_add_payment_method:
+  - text: "To add a new payment method, log in to your account and navigate to the payment settings."
+
+  utter_remove_payment_method:
+  - text: "To remove a payment method, visit your account settings or contact our support team."
+
+  utter_update_payment_method:
+  - text: "If you need to update your payment details, visit our website or call our customer service."
+
+  utter_confirm_payment_receipt:
+  - text: "After making a payment, check your email or account for a confirmation receipt."
+
+  utter_inquire_exchange_rate:
+  - text: "Exchange rates fluctuate based on currency markets. You can find real-time rates online or through our banking app."
+
+  utter_convert_currency:
+  - text: "Currency conversion allows you to change one currency into another. We offer competitive rates for currency exchange."
+
+  utter_send_invoice:
+  - text: "To send an invoice, provide the recipient's details, itemized charges, and due date."
+
+  utter_request_payment:
+  - text: "Need someone to pay you? Send them a payment request with the amount and purpose."
+
+  utter_split_bill:
+  - text: "Splitting bills with friends or colleagues? Let us know the total amount and how you'd like to divide it."
+
+  utter_schedule_payment:
+  - text: "Schedule future payments for bills, subscriptions, or loan installments. Specify the date and amount."
+
+  utter_check_payment_limit:
+  - text: "Payment limits vary based on your account type and security settings. You can find this information in your account details."
+  # ... other responses for payment services
+
+
+  utter_ask_financial_planning_tool:
+  - text: "What financial planning service are you interested in? (e.g., budgeting tools, retirement planning)"
+  - text: "What specific financial planning tool or service are you interested in? We offer various tools to help you manage your finances."
+  utter_budgeting_tools:
+  - text: "I can help you set up and manage your budgeting tools."
+  - text: "Use budgeting apps or spreadsheets to track income, expenses, and savings goals. Allocate funds for essential needs, discretionary spending, and savings."
+
+  utter_financial_advice:
+  - text: "Based on your financial goals, here's some advice."
+  - text: "Consult with a financial advisor to create a personalized financial plan. Seek advice on investment strategies, risk management, and retirement planning."
+  utter_retirement_planning:
+  - text: "Let's plan for your retirement. Here are some options."
+  - text: "Estimate retirement expenses and set savings goals. Contribute to retirement accounts regularly."
+
+  utter_debt_management:
+  - text: "Create a debt repayment plan. Prioritize high-interest debts and consider consolidation options."
+
+  utter_savings_plan:
+  - text: "Build an emergency fund and save for short-term and long-term goals."
+
+  utter_investment_strategy:
+  - text: "Diversify investments across asset classes based on risk tolerance and time horizon."
+
+  utter_tax_planning:
+  - text: "Optimize tax efficiency using tax-advantaged accounts and understand tax implications."
+
+  utter_estate_planning:
+  - text: "Create a will, designate beneficiaries, and plan for asset distribution."
+
+  utter_insurance_coverage_review:
+  - text: "Evaluate life, health, home, and auto insurance policies to ensure coverage aligns with your needs."
+
+  utter_financial_goal_setting:
+  - text: "Define short-term and long-term financial goals. Break down goals into actionable steps."
+
+  utter_wealth_preservation:
+  - text: "Protect assets through estate planning, insurance, and minimizing unnecessary expenses."
+
+  utter_charitable_giving_strategy:
+  - text: "Plan charitable donations based on personal values and financial capacity."
+
+  utter_mortgage_refinancing:
+  - text: "Consider refinancing your mortgage to lower interest rates or adjust terms."
+
+  utter_credit_score_improvement:
+  - text: "Monitor credit reports and address any inaccuracies. Pay bills on time and reduce credit card balances."
+
+  utter_retirement_account_review:
+  - text: "Regularly review retirement accounts and adjust allocations as needed."
+
+  utter_financial_health_checkup:
+  - text: "Periodically assess your overall financial health. Identify areas for improvement and adjust strategies accordingly."
+
+  utter_cash_flow_analysis:
+  - text: "Analyze income and expenses to understand cash flow patterns."
+
+  utter_risk_tolerance_assessment:
+  - text: "Evaluate your comfort level with investment risk and align choices accordingly."
+  # ... other responses for financial planning
+
+
+  utter_ask_cryptocurrency:
+  - text: "What specific information are you looking for regarding cryptocurrencies? We can discuss Bitcoin, Ethereum, blockchain technology, wallets, exchanges, and more."
+
+  utter_inquire_bitcoin:
+  - text: "Bitcoin (BTC) is the first and most well-known cryptocurrency. It operates on a decentralized network called blockchain. Its value can be volatile, so it's essential to stay informed."
+
+  utter_inquire_ethereum:
+  - text: "Ethereum (ETH) is a blockchain platform that enables smart contracts and decentralized applications (DApps). It has its native cryptocurrency called Ether (ETH)."
+
+  utter_inquire_blockchain:
+  - text: "Blockchain is a distributed ledger technology that records transactions across multiple computers. It ensures transparency, security, and immutability."
+
+  utter_inquire_crypto_wallets:
+  - text: "Crypto wallets store private keys and allow users to send, receive, and manage their cryptocurrencies securely. Hardware wallets, software wallets, and mobile wallets are common types."
+
+  utter_inquire_crypto_exchanges:
+  - text: "Crypto exchanges facilitate buying, selling, and trading cryptocurrencies. They provide liquidity and price discovery. Research reputable exchanges before trading."
+
+  utter_inquire_crypto_mining:
+  - text: "Crypto mining involves validating transactions and securing the network by solving complex mathematical puzzles. It's resource-intensive and requires specialized hardware."
+
+  utter_inquire_crypto_security:
+  - text: "Security measures protect crypto assets from theft, hacks, and unauthorized access. Best practices include using strong passwords, enabling two-factor authentication, and avoiding phishing scams."
+
+  utter_inquire_initial_coin_offerings:
+  - text: "ICOs are fundraising events where new cryptocurrencies or tokens are offered to investors. Due diligence is crucial, as some ICOs may be risky or fraudulent."
+
+  utter_inquire_crypto_regulations:
+  - text: "Governments worldwide are developing regulations to govern cryptocurrency usage. Compliance with local laws is essential for crypto businesses and investors."
+
+  utter_inquire_crypto_taxes:
+  - text: "Tax implications vary by country. Properly reporting crypto transactions is essential to avoid legal issues."
+
+  utter_inquire_stablecoins:
+  - text: "Stablecoins are pegged to a stable asset (e.g., USD) to minimize price volatility. They provide stability for trading and transactions."
+
+  utter_inquire_defi:
+  - text: "DeFi refers to financial services built on blockchain, such as lending, borrowing, and yield farming. It aims to create an open and permissionless financial system."
+
+  utter_inquire_nfts:
+  - text: "NFTs represent unique digital assets (art, collectibles) on the blockchain. They have gained popularity in the art and entertainment industry."
+
+  utter_inquire_crypto_portfolio:
+  - text: "Diversify your crypto holdings across different assets for risk management. Regularly review and adjust your portfolio."
+
+  utter_inquire_crypto_trading:
+  - text: "Crypto trading involves buying low and selling high. Technical analysis and market trends play a crucial role."
+
+  utter_inquire_crypto_market_cap:
+  - text: "Market capitalization represents the total value of all cryptocurrencies combined. It's an indicator of the overall market size."
+
+  utter_inquire_crypto_price:
+  - text: "Cryptocurrency prices fluctuate based on supply, demand, and market sentiment. Stay informed about price movements."
+
+  utter_inquire_crypto_investment:
+  - text: "Invest wisely, considering risk tolerance and long-term goals. Research projects thoroughly before investing."
+
+  utter_inquire_crypto_savings_and_loans:
+  - text: "Earn interest by lending crypto or borrow against your holdings. Explore platforms that offer crypto savings and loans."
+  # ... other responses for blockchain and cryptocurrency
+  utter_ask_compliance_topic:
+  - text: "What specific compliance topic are you interested in? We cover a wide range of regulatory areas, from anti-money laundering to data protection."
+
+  utter_regulatory_compliance:
+  - text: "Regulatory compliance ensures that organizations adhere to laws, policies, and standards relevant to their operations. It's crucial for legal and ethical business practices."
+
+  utter_anti_money_laundering:
+  - text: "AML regulations aim to prevent money laundering and terrorist financing. Organizations must implement controls to detect and report suspicious transactions."
+
+  utter_know_your_customer:
+  - text: "KYC procedures verify the identity of customers to prevent fraud, money laundering, and other illicit activities."
+
+  utter_data_protection_compliance:
+  - text: "Organizations must comply with data protection laws (e.g., GDPR) to safeguard personal information."
+
+  utter_consumer_protection_laws:
+  - text: "These laws protect consumers from unfair practices, false advertising, and unsafe products."
+
+  utter_financial_reporting_standards:
+  - text: "Compliance with accounting standards (e.g., IFRS, GAAP) ensures accurate financial reporting."
+
+  utter_compliance_audit:
+  - text: "Regular audits assess compliance with regulations and identify areas for improvement."
+
+  utter_risk_assessment:
+  - text: "Evaluate risks associated with non-compliance and implement mitigation strategies."
+
+  utter_ethical_investing_standards:
+  - text: "Ethical investing considers environmental, social, and governance (ESG) factors when making investment decisions."
+
+  utter_trade_compliance:
+  - text: "Trade compliance ensures adherence to import/export regulations and trade agreements."
+
+  utter_sanctions_screening:
+  - text: "Screen individuals and entities against government sanctions lists to prevent illegal transactions."
+
+  utter_anti_bribery_compliance:
+  - text: "Anti-bribery compliance aims to prevent bribery and corruption in business dealings."
+
+  utter_financial_advisory_regulations:
+  - text: "Financial advisors must comply with regulations to provide accurate and transparent advice to clients."
+
+  utter_cybersecurity_regulations:
+  - text: "Compliance with cybersecurity regulations protects sensitive data and prevents cyber threats."
+
+  utter_insider_trading_monitoring:
+  - text: "Monitor and prevent insider trading to maintain market integrity."
+
+  utter_conflict_of_interest_policy:
+  - text: "Organizations establish conflict of interest policies to manage situations where personal interests may affect decision-making."
+
+  utter_environmental_compliance:
+  - text: "Compliance with environmental regulations ensures responsible resource use and minimizes ecological impact."
+
+  utter_social_governance_compliance:
+  - text: "Social governance compliance focuses on ethical and responsible business practices."
+
+  utter_compliance_training:
+  - text: "Regular training educates employees on compliance requirements and best practices."
+
+  utter_regulatory_filing:
+  - text: "Submit required reports and disclosures to regulatory authorities as part of compliance."
+
+    # ... other responses for regulatory compliance
+
+  # Absa Bank
+
+  utter_ask_absa_operating_hours:
+  - text: "ABSA bank's operating hours may vary by branch location. It's best to visit their official website or contact their customer service for the most accurate information."
+
+  utter_ask_absa_interest_rates:
+  - text: "ABSA bank offers various savings account options, each with its own interest rates. For the latest interest rates, I recommend visiting ABSA's official website or contacting them directly."
+
+  utter_ask_absa_minimum_balance:
+  - text: "The minimum balance required for a current account at ABSA bank is [Minimum Balance]."
+  utter_ask_absa_online_banking:
+  - text: "Yes, ABSA bank offers online banking services."
+  utter_ask_absa_open_account:
+  - text: "To open a new account with ABSA bank, you can visit any of our branches or apply online on our website."
+  utter_ask_absa_loan_types:
+  - text: "ABSA bank offers various types of loans, including personal loans, home loans, and vehicle finance."
+  utter_ask_absa_credit_card_options:
+  - text: "ABSA bank provides a range of credit card options, including cashback cards, rewards cards, and premium cards."
+  utter_ask_absa_mortgage_application:
+  - text: "To apply for a mortgage at ABSA bank, you can visit any of our branches or start the application process online on our website."
+  utter_ask_absa_investment_services:
+  - text: "Yes, ABSA bank offers investment services, including savings and investment accounts, as well as financial planning services."
+  utter_ask_absa_customer_service:
+  - text: "You can contact ABSA bank's customer service by calling [Customer Service Number] or visiting our website for online assistance."
+
+  utter_inquire_absa_reward_program:
+  - text: "The Absa loyalty program offers various benefits and rewards for our customers. You can earn Reward Points on qualifying transactions, which can be redeemed for various rewards."
+  utter_redeem_absa_reward_points:
+  - text: "You can redeem your Reward Points from Absa for a range of rewards, including merchandise, travel vouchers, and cashback."
+  utter_absa_reward_points_expiry:
+  - text: "Reward Points from Absa expire after a certain period. Please check your account for the expiry date of your Reward Points."
+  utter_change_absa_reward_rules:
+  - text: "Absa may change the reward program rules from time to time. Please refer to our website or contact customer service for the latest information on reward program rules."
+  utter_restrict_earning_absa_reward_points:
+  - text: "Earning Reward Points at Absa may be subject to certain restrictions, such as transaction types and account status. Please review the terms and conditions of the reward program for more information."
+  utter_reverse_absa_reward_points:
+  - text: "Reward Points from Absa may be reversed in case of fraudulent activities or other irregularities. Please contact customer service for assistance if you believe there is an error in your Reward Points balance."
+  utter_terminate_absa_reward_points:
+  - text: "Absa reserves the right to terminate Reward Points in accordance with the terms and conditions of the reward program. Please review the program rules for more information on termination."
+  utter_disqualify_absa_participation:
+  - text: "Participation in Absa's loyalty program may be disqualified if the terms and conditions of the program are violated. Please ensure compliance with the program rules to maintain eligibility for rewards and benefits."
+  utter_change_or_terminate_absa_program:
+  - text: "Absa may change or terminate its loyalty program at its discretion. Any changes or terminations will be communicated to customers in advance. Please stay updated with our latest announcements for any updates to the program."
+
+  utter_absa_account_opening:
+  - text: "To open an Absa account, you need to follow these steps:"
+  - text: "1. Visit the nearest Absa branch."
+  - text: "2. Bring your valid identification documents."
+  - text: "3. Fill out the account opening application form."
+  - text: "4. Submit the necessary documents to the bank representative."
+  - text: "5. Make an initial deposit."
+  - text: "6. Your account will be activated once the verification process is complete."
+  # HFC
+
+  utter_hfc_operating_hours:
+  - text: "HFC bank operating hours are Monday to Friday from 8:30 AM to 4:00 PM and Saturdays from 8:30 AM to 12:00 PM."
+  utter_hfc_interest_rates:
+  - text: "Interest rates for HFC bank may vary. Please check their website for the latest rates: [HFC Bank Interest Rates](https://www.hfgroup.co.ke/assets/HF-TARIFF-GUIDE-052020.03e7bab8.pdf)"
+  utter_hfc_minimum_balance:
+  - text: "The minimum balance required for a current account at HFC bank is $10."
+  utter_hfc_online_banking:
+  - text: "Yes, HFC bank offers online banking services."
+  utter_hfc_open_account:
+  - text: "You can open a new account with HFC bank by visiting any of our branches or applying online through our website."
+  utter_hfc_loan_types:
+  - text: "HFC bank offers various types of loans, including personal loans, home loans, and auto loans."
+  utter_hfc_credit_card_options:
+  - text: "HFC bank provides a range of credit card options, including cashback cards, rewards cards, and travel cards."
+  utter_hfc_mortgage_application:
+  - text: "To apply for a mortgage at HFC bank, you can visit any of our branches and speak to one of our mortgage advisors."
+  utter_hfc_investment_services:
+  - text: "Yes, HFC bank offers investment services, including wealth management, mutual funds, and retirement planning."
+  utter_hfc_customer_service:
+  - text: "You can contact HFC bank's customer service by calling our hotline at [insert hotline number] or visiting our website for online chat support."
+  utter_hfc_choose_account_type:
+  - text: "Please choose the type of account you would like to open."
+
+  utter_hfc_visit_branch:
+  - text: "Please visit our nearest branch for assistance."
+
+  utter_hfc_gather_documents:
+  - text: "Gather the required documents for account opening, including valid identification, proof of address, and any additional documents specified by the bank."
+  utter_hfc_fill_application_form:
+  - text: "Complete the account opening application form provided by HFC. Ensure all information is accurate and complete."
+  utter_hfc_submit_documents:
+  - text: "Submit the filled application form and supporting documents to the bank's designated staff."
+  utter_hfc_make_initial_deposit:
+  - text: "Make the initial deposit as per HFC's minimum balance requirements for the chosen account type."
+  utter_hfc_verification_processing:
+  - text: "HFC will verify your documents and process your account opening request."
+  utter_hfc_receive_account_details:
+  - text: "Once approved, you will receive your account details, including your account number and other relevant information."
+  utter_hfc_activate_online_banking:
+  - text: "If available, activate online banking services to manage your account conveniently."
+  utter_hfc_start_using_account:
+  - text: "Congratulations! Your HFC account is now open, and you can start using it for your banking needs."
+  utter_hfc_account_opening:
+  - text: "To open an HFC account, please follow these steps:"
+  - text: "1. Visit an HFC branch nearest to you."
+  - text: "2. Bring your identification documents and proof of address."
+  - text: "3. Fill out the account opening form provided by the bank."
+  - text: "4. Submit the completed form along with the required documents to the bank representative."
+  - text: "5. Make an initial deposit to fund your new account."
+  - text: "6. Your account will be activated once the bank completes the verification process."
+
+  # Bank of India Kenya
+  utter_ask_boi_customer_rights:
+  - text: "Bank of India respects your rights as a customer. Here are your customer rights:"
+  utter_inquire_about_boi_data_usage:
+  - text: "Customers have the right to know how their personal data is used by Bank of India."
+  utter_object_to_boi_data_processing:
+  - text: "Customers can object to certain data processing by Bank of India, but the Bank may decline if deemed legitimate."
+  utter_access_boi_personal_data:
+  - text: "Customers can access the personal data held by Bank of India upon request."
+  utter_request_correction_boi_data:
+  - text: "Customers can request corrections to inaccurate or misleading data held by Bank of India."
+  utter_request_deletion_boi_data:
+  - text: "Customers can ask for removal of data held by Bank of India if there is no compelling reason for its retention."
+  utter_request_data_portability_boi:
+  - text: "Customers can request a copy of their data held by Bank of India in electronic format at a cost."
+  utter_withdraw_consent_boi_data_processing:
+  - text: "Customers can withdraw consent for data processing by Bank of India at any time if relied upon by the Bank."
+  utter_bank_of_india_choose_account_type:
+  - text: "To start, choose the type of account you want to open. We offer various options, including savings accounts, current accounts, and fixed deposit accounts."
+  utter_bank_of_india_visit_branch:
+  - text: "Visit your nearest Bank of India branch to initiate the account opening process."
+  utter_bank_of_india_gather_documents:
+  - text: "Gather the necessary documents required for opening an account, including proof of identity, proof of address, and passport-sized photographs."
+  utter_bank_of_india_fill_application_form:
+  - text: "Fill out the account opening application form provided by the bank. Make sure to provide accurate information."
+  utter_bank_of_india_submit_documents:
+  - text: "Submit the completed application form along with the required documents to the bank staff."
+  utter_bank_of_india_make_initial_deposit:
+  - text: "Make the initial deposit as per the bank's minimum balance requirements. This amount may vary depending on the type of account you're opening."
+  utter_bank_of_india_verification_processing:
+  - text: "The bank will verify your documents and process your account opening request."
+  utter_bank_of_india_receive_account_details:
+  - text: "Once your account is approved, you'll receive your account details, including your account number and other relevant information."
+  utter_bank_of_india_activate_online_banking:
+  - text: "If applicable, activate online banking services to access your account online."
+  utter_bank_of_india_start_using_account:
+  - text: "Congratulations! Your Bank of India account is now open, and you can start using it for your banking needs."
+  utter_boi_data_usage:
+  - text: "Bank of India may collect and use your personal data to provide banking services, comply with legal requirements, and enhance customer experience. Your data may be used for account management, transaction processing, risk management, and marketing purposes."
+  utter_bank_of_india_kenya_account_opening:
+  - text: "To open an account with Bank of India Kenya, please follow these steps:"
+  - text: "1. Visit the nearest Bank of India Kenya branch."
+  - text: "2. Bring your valid identification documents (such as passport, national ID, or driver's license)."
+  - text: "3. Fill out the account opening application form provided by the bank."
+  - text: "4. Submit the completed application form along with the required documents to the bank representative."
+  - text: "5. Make an initial deposit to fund your new account."
+  - text: "6. Your account will be activated once the bank completes the verification process."
+
+
+
+actions:
+    # banking services
+  - action_ask_account_type
+  - action_ask_loan_type
+  - action_check_balance
+  - action_transfer_money
+  - action_apply_for_loan
+  - action_open_account
+  - action_report_lost_card
+  - action_order_checks
+  - action_update_personal_info
+  - action_set_travel_notice
+  - action_schedule_appointment
+  - action_activate_card
+  - action_dispute_transaction
+  - action_request_credit_line_increase
+  - action_lock_card
+  - action_unlock_card
+  - action_pay_credit_card
+  - action_setup_autopay
+  - action_cancel_account
+  - action_redeem_rewards
+  - action_change_pin
+  - action_enroll_in_online_banking
+  - action_download_statement
+  - action_ask_about_fees
+  - action_find_atm
+  - action_ask_interest_rate
+
+  # investment services
+  - action_ask_investment_type
+  - action_inquire_stocks
+  - action_inquire_bonds
+  - action_inquire_mutual_funds
+  - action_inquire_etfs
+  - action_inquire_index_funds
+  - action_inquire_stock_options
+  - action_inquire_dividends
+  - action_inquire_portfolio_management
+  - action_inquire_retirement_planning
+  - action_inquire_tax_advantaged_investing
+  - action_inquire_education_savings
+  - action_inquire_real_estate_investing
+  - action_inquire_commodities
+  - action_inquire_forex
+  - action_inquire_crowdfunding
+  - action_inquire_robo_advisors
+  - action_inquire_impact_investing
+  - action_inquire_technical_analysis
+  - action_inquire_fundamental_analysis
+  - action_inquire_market_trends
+
+    # insurance services
+  - action_ask_insurance_type
+  - action_inquire_life_insurance
+  - action_inquire_health_insurance
+  - action_inquire_auto_insurance
+  - action_inquire_property_insurance
+  - action_inquire_travel_insurance
+  - action_inquire_pet_insurance
+  - action_inquire_disability_insurance
+  - action_inquire_critical_illness_insurance
+  - action_inquire_long_term_care_insurance
+  - action_inquire_renters_insurance
+  - action_inquire_homeowners_insurance
+  - action_inquire_liability_insurance
+  - action_inquire_business_insurance
+  - action_inquire_marine_insurance
+  - action_inquire_aviation_insurance
+  - action_inquire_cyber_security_insurance
+  - action_inquire_credit_insurance
+  - action_inquire_mortgage_insurance
+  - action_inquire_title_insurance
+  - action_inquire_workers_compensation
+
+  # payment services
+  - action_ask_payment_service
+  - action_process_payment
+  - action_mobile_payment
+  - action_peer_to_peer_transfer
+  - action_inquire_transaction_fee
+  - action_setup_automatic_payments
+  - action_cancel_payment
+  - action_inquire_payment_status
+  - action_report_payment_issue
+  - action_request_refund
+  - action_add_payment_method
+  - action_remove_payment_method
+  - action_update_payment_method
+  - action_confirm_payment_receipt
+  - action_inquire_exchange_rate
+  - action_convert_currency
+  - action_send_invoice
+  - action_request_payment
+  - action_split_bill
+  - action_schedule_payment
+  - action_check_payment_limit
+
+  # financial planning
+  - action_ask_financial_planning_tool
+  - action_budgeting_tools
+  - action_financial_advice
+  - action_retirement_planning
+  - action_debt_management
+  - action_savings_plan
+  - action_investment_strategy
+  - action_tax_planning
+  - action_estate_planning
+  - action_college_savings_plan
+  - action_emergency_fund_planning
+  - action_insurance_coverage_review
+  - action_financial_goal_setting
+  - action_wealth_preservation
+  - action_charitable_giving_strategy
+  - action_mortgage_refinancing
+  - action_credit_score_improvement
+  - action_retirement_account_review
+  - action_financial_health_checkup
+  - action_cash_flow_analysis
+  - action_risk_tolerance_assessment
+
+  # blockchain and cryptocurrency
+  - action_ask_cryptocurrency
+  - action_inquire_bitcoin
+  - action_inquire_ethereum
+  - action_inquire_blockchain
+  - action_inquire_crypto_wallet
+  - action_inquire_crypto_exchange
+  - action_inquire_crypto_mining
+  - action_inquire_crypto_security
+  - action_inquire_initial_coin_offering
+  - action_inquire_crypto_regulations
+  - action_inquire_crypto_taxes
+  - action_inquire_stablecoins
+  - action_inquire_defi
+  - action_inquire_nft
+  - action_inquire_crypto_portfolio
+  - action_inquire_crypto_trading
+  - action_inquire_crypto_market_cap
+  - action_inquire_crypto_price
+  - action_inquire_crypto_investment
+  - action_inquire_crypto_savings
+  - action_inquire_crypto_loans
+
+  # regulatory compliance
+  - ask_compliance_topic
+  - action_regulatory_compliance
+  - action_anti_money_laundering
+  - action_know_your_customer
+  - action_data_protection_compliance
+  - action_consumer_protection_laws
+  - action_financial_reporting_standards
+  - action_compliance_audit
+  - action_risk_assessment
+  - action_ethical_investing_standards
+  - action_trade_compliance
+  - action_sanctions_screening
+  - action_anti_bribery_compliance
+  - action_financial_advisory_regulations
+  - action_cybersecurity_regulations
+  - action_insider_trading_monitoring
+  - action_conflict_of_interest_policy
+  - action_environmental_compliance
+  - action_social_governance_compliance
+  - action_compliance_training
+  - action_regulatory_filing
+
+# Absa Bank
+  - action_absa_operating_hours
+  - action_absa_interest_rates
+  - action_absa_minimum_balance
+  - action_absa_online_banking
+  - action_absa_open_account
+  - action_absa_loan_types
+  - action_absa_credit_card_options
+  - action_absa_mortgage_application
+  - action_absa_investment_services
+  - action_absa_customer_service
+
+# HFC Bank
+  - action_check_hfc_operating_hours
+  - action_check_hfc_interest_rates
+  - action_check_hfc_minimum_balance
+  - action_inquire_about_hfc_online_banking
+  - action_open_hfc_account
+  - action_inquire_about_hfc_loan_types
+  - action_inquire_about_hfc_credit_card_options
+  - action_apply_for_hfc_loan
+  - action_apply_for_hfc_mortgage
+  - action_inquire_about_hfc_investment_services
+  - action_contact_hfc_customer_service
+  - hfc_choose_account_type
+  - hfc_visit_branch
+  - action_hfc_gather_documents
+  - action_hfc_fill_application_form
+  - action_hfc_submit_documents
+  - action_hfc_make_initial_deposit
+  - action_hfc_verification_processing
+  - action_hfc_receive_account_details
+  - action_hfc_activate_online_banking
+  - action_hfc_start_using_account
+  - action_hfc_account_opening
+
+
+# Bank Of India Kenya
+  - action_ask_boi_customer_rights
+  - action_inquire_about_boi_data_usage
+  - action_object_to_boi_data_processing
+  - action_access_boi_personal_data
+  - action_request_correction_boi_data
+  - action_request_deletion_boi_data
+  - action_request_data_portability_boi
+  - action_withdraw_consent_boi_data_processing
+  - action_bank_of_india_account_opening

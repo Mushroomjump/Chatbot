@@ -1,0 +1,185 @@
+rules:
+  # Banking Services
+  - rule: Check balance
+    steps:
+      - intent: check_balance
+      - action: utter_check_balance
+
+  - rule: Transfer money
+    steps:
+      - intent: transfer_money
+      - action: utter_transfer_money
+
+  - rule: Apply for loan
+    steps:
+      - intent: apply_for_loan
+      - action: utter_apply_for_loan
+
+  - rule: Open account
+    steps:
+      - intent: open_account
+      - action: utter_open_account
+
+  - rule: Report lost card
+    steps:
+      - intent: report_lost_card
+      - action: utter_report_lost_card
+
+  - rule: Order checks
+    steps:
+      - intent: order_checks
+      - action: utter_order_checks
+
+  - rule: Update personal info
+    steps:
+      - intent: update_personal_info
+      - action: utter_update_personal_info
+
+  - rule: Set travel notice
+    steps:
+      - intent: set_travel_notice
+      - action: utter_set_travel_notice
+
+  - rule: Schedule appointment
+    steps:
+      - intent: schedule_appointment
+      - action: utter_schedule_appointment
+
+  - rule: Activate card
+    steps:
+      - intent: activate_card
+      - action: utter_activate_card
+
+  - rule: Dispute transaction
+    steps:
+      - intent: dispute_transaction
+      - action: utter_dispute_transaction
+
+  - rule: Request credit line increase
+    steps:
+      - intent: request_credit_line_increase
+      - action: utter_request_credit_line_increase
+
+  - rule: Lock card
+    steps:
+      - intent: lock_card
+      - action: utter_lock_card
+
+  - rule: Unlock card
+    steps:
+      - intent: unlock_card
+      - action: utter_unlock_card
+
+  - rule: Pay credit card
+    steps:
+      - intent: pay_credit_card
+      - action: utter_pay_credit_card
+
+  - rule: Setup autopay
+    steps:
+      - intent: setup_autopay
+      - action: utter_setup_autopay
+
+  - rule: Cancel account
+    steps:
+      - intent: cancel_account
+      - action: utter_cancel_account
+
+  - rule: Redeem rewards
+    steps:
+      - intent: redeem_rewards
+      - action: utter_redeem_rewards
+
+  - rule: Change PIN
+    steps:
+      - intent: change_pin
+      - action: utter_change_pin
+
+  - rule: Enroll in online banking
+    steps:
+      - intent: enroll_in_online_banking
+      - action: utter_enroll_in_online_banking
+
+  - rule: Download statement
+    steps:
+      - intent: download_statement
+      - action: utter_download_statement
+
+  - rule: Ask about fees
+    steps:
+      - intent: ask_about_fees
+      - action: utter_ask_about_fees
+
+  - rule: Find ATM
+    steps:
+      - intent: find_atm
+      - action: utter_find_atm
+
+  - rule: Ask interest rate
+    steps:
+      - intent: ask_interest_rate
+      - action: utter_ask_interest_rate
+
+  # Investment Services
+  - rule: Inquire about stocks
+    steps:
+      - intent: inquire_stocks
+      - action: utter_inquire_stocks
+
+  - rule: Inquire about bonds
+    steps:
+      - intent: inquire_bonds
+      - action: utter_inquire_bonds
+
+  # Insurance Services
+  - rule: Inquire about life insurance
+    steps:
+      - intent: inquire_life_insurance
+      - action: utter_inquire_life_insurance
+
+  - rule: Inquire about health insurance
+    steps:
+      - intent: inquire_health_insurance
+      - action: utter_inquire_health_insurance
+
+  # Payment Services
+  - rule: Process payment
+    steps:
+      - intent: process_payment
+      - action: utter_process_payment
+
+  # Financial Planning
+  - rule: Get financial advice
+    steps:
+      - intent: financial_advice
+      - action: utter_financial_advice
+
+  # Blockchain and Cryptocurrency
+  - rule: Inquire about Bitcoin
+    steps:
+      - intent: inquire_bitcoin
+      - action: utter_inquire_bitcoin
+
+  # Regulatory Compliance
+  - rule: Regulatory compliance
+    steps:
+      - intent: regulatory_compliance
+      - action: utter_regulatory_compliance
+
+  # Absa Bank Actions
+  - rule: Check Absa operating hours
+    steps:
+      - intent: ask_absa_operating_hours
+      - action: utter_absa_operating_hours
+
+  # HFC Bank Actions
+  - rule: Inquire about HFC online banking
+    steps:
+      - intent: ask_hfc_online_banking
+      - action: utter_inquire_about_hfc_online_banking
+
+  # Bank of India Kenya Actions
+  - rule: Access Bank of India Kenya personal data
+    steps:
+      - intent: access_boi_personal_data
+      - action: utter_access_boi_personal_data

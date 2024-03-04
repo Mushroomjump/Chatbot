@@ -1,0 +1,14 @@
+action_endpoint:
+  url: "http://localhost:5055/webhook"
+
+# Tracker store
+tracker_store:
+  type: "redis"
+  url: "localhost"
+  port: 6379
+  db: 0
+  password: ""
+
+# Rasa server
+rasa:
+  url: "http://localhost:5005"

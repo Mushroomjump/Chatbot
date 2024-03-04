@@ -1,0 +1,864 @@
+version: "3.1"
+
+nlu:
+  # banking services
+- intent: check_balance
+  examples: |
+    - What's my account balance?
+    - Can you check my balance?
+    - Balance inquiry
+- intent: transfer_money
+  examples: |
+    - Transfer funds to another account
+    - Send money to a friend
+    - Make a payment
+- intent: apply_for_loan
+  examples: |
+    - I want to apply for a loan
+    - Loan application
+    - How can I get a loan?
+- intent: open_account
+  examples: |
+    - I'd like to open a new account
+    - Account opening process
+    - Can I start a savings account?
+- intent: report_lost_card
+  examples: |
+    - My card is lost
+    - Report a lost card
+    - Card replacement
+- intent: order_checks
+  examples: |
+    - Request new checks
+    - Order checkbook
+    - How do I get more checks?
+- intent: update_personal_info
+  examples: |
+    - Change my address
+    - Update contact details
+    - Modify personal information
+- intent: set_travel_notice
+  examples: |
+    - Notify the bank about my travel plans
+    - Set a travel alert
+    - Traveling soon
+- intent: schedule_appointment
+  examples: |
+    - Book an appointment with a banker
+    - Meeting with a financial advisor
+    - Schedule a branch visit
+- intent: activate_card
+  examples: |
+    - Activate my new card
+    - Card activation process
+    - How to activate a credit card?
+- intent: dispute_transaction
+  examples: |
+    - I need to dispute a charge
+    - Unauthorized transaction
+    - Report a fraudulent payment
+- intent: request_credit_line_increase
+  examples: |
+    - Can I get a credit limit increase?
+    - Increase my credit line
+    - Request higher credit limit
+- intent: lock_card
+  examples: |
+    - Lock my card temporarily
+    - Suspend card usage
+    - Card security
+- intent: unlock_card
+  examples: |
+    - Unlock my card
+    - Reactivate card
+    - Card unblocking
+- intent: pay_credit_card
+  examples: |
+    - Pay my credit card bill
+    - Credit card payment
+    - Settle outstanding balance
+- intent: setup_autopay
+  examples: |
+    - Enroll in automatic payments
+    - Autopay setup
+    - Schedule recurring payments
+- intent: cancel_account
+  examples: |
+    - Close my account
+    - Account cancellation
+    - Terminate banking services
+- intent: redeem_rewards
+  examples: |
+    - Redeem my rewards points
+    - Claim loyalty rewards
+    - Use my bonus points
+- intent: change_pin
+  examples: |
+    - Reset my card PIN
+    - Change ATM PIN
+    - Update PIN code
+- intent: enroll_in_online_banking
+  examples: |
+    - Sign up for online banking
+    - Create an online account
+    - Register for internet banking
+- intent: download_statement
+  examples: |
+    - Get my account statement
+    - Statement download
+    - View transaction history
+- intent: ask_about_fees
+  examples: |
+    - What are the account fees?
+    - Fee structure
+    - Charges for banking services
+- intent: find_atm
+  examples: |
+    - Locate an ATM nearby
+    - Find a cash machine
+    - ATM finder
+- intent: ask_interest_rate
+  examples: |
+    - What's the current interest rate?
+    - Interest on savings account
+    - Loan interest rate
+
+  #investment services
+- intent: inquire_stocks
+  examples: |
+    - Tell me about investing in stocks
+    - How do I buy shares in a company?
+    - Stock market basics
+- intent: inquire_bonds
+  examples: |
+    - What are bonds?
+    - Bond investing
+    - Types of fixed-income securities
+- intent: inquire_mutual_funds
+  examples: |
+    - Explain mutual funds
+    - Mutual fund investment strategies
+    - Pros and cons of mutual funds
+- intent: inquire_etfs
+  examples: |
+    - What are ETFs?
+    - Benefits of exchange-traded funds
+    - ETF vs. mutual funds
+- intent: inquire_index_funds
+  examples: |
+    - Index funds explained
+    - Investing in market indices
+    - S&P 500 index funds
+- intent: inquire_stock_options
+  examples: |
+    - How do stock options work?
+    - Options trading strategies
+    - Call vs. put options
+- intent: inquire_dividends
+  examples: |
+    - What are dividends?
+    - Dividend-paying stocks
+    - Reinvesting dividends
+- intent: inquire_portfolio_management
+  examples: |
+    - Portfolio management services
+    - Professional investment management
+    - Building a diversified portfolio
+- intent: inquire_retirement_planning
+  examples: |
+    - Retirement savings strategies
+    - 401(k) plans
+    - IRA options
+- intent: inquire_tax_advantaged_investing
+  examples: |
+    - Tax-efficient investing
+    - Benefits of tax-advantaged accounts
+    - Roth vs. traditional IRAs
+- intent: inquire_education_savings
+  examples: |
+    - College savings plans
+    - 529 plans
+    - Coverdell Education Savings Accounts
+- intent: inquire_real_estate_investing
+  examples: |
+    - Real estate investment basics
+    - Rental properties
+    - Real estate crowdfunding
+- intent: inquire_commodities
+  examples: |
+    - Investing in commodities
+    - Gold, oil, and other commodities
+    - Commodity futures
+- intent: inquire_forex
+  examples: |
+    - Forex trading
+    - Currency exchange markets
+    - Forex brokers
+- intent: inquire_crowdfunding
+  examples: |
+    - Crowdfunding investments
+    - Equity crowdfunding
+    - Peer-to-peer lending
+- intent: inquire_robo_advisors
+  examples: |
+    - Robo-advisors explained
+    - Automated investment platforms
+    - Pros and cons of robo-advisors
+- intent: inquire_impact_investing
+  examples: |
+    - Socially responsible investing
+    - ESG criteria
+    - Impact investment funds
+- intent: inquire_technical_analysis
+  examples: |
+    - Technical analysis in trading
+    - Chart patterns
+    - Moving averages
+- intent: inquire_fundamental_analysis
+  examples: |
+    - Fundamental analysis of stocks
+    - Financial statements
+    - Valuation metrics
+- intent: inquire_market_trends
+  examples: |
+    - Current market trends
+    - Economic indicators
+    - Market analysis
+
+  # insurance services
+- intent: inquire_life_insurance
+  examples: |
+    - Life insurance coverage
+    - Types of life insurance policies
+    - How does life insurance work?
+- intent: inquire_health_insurance
+  examples: |
+    - Health insurance plans
+    - Coverage for medical expenses
+    - Choosing a health insurance policy
+- intent: inquire_auto_insurance
+  examples: |
+    - Auto insurance coverage
+    - Car insurance options
+    - How to compare auto insurance quotes
+- intent: inquire_property_insurance
+  examples: |
+    - Property insurance types
+    - Homeowners insurance
+    - Renters insurance
+- intent: inquire_travel_insurance
+  examples: |
+    - Travel insurance benefits
+    - Coverage for trips
+    - International travel insurance
+- intent: inquire_pet_insurance
+  examples: |
+    - Pet insurance policies
+    - Veterinary expenses coverage
+    - Insuring your pet's health
+- intent: inquire_disability_insurance
+  examples: |
+    - Disability insurance
+    - Income protection coverage
+    - Short-term vs. long-term disability
+- intent: inquire_critical_illness_insurance
+  examples: |
+    - Critical illness coverage
+    - Insurance for serious health conditions
+    - Payouts for critical illnesses
+- intent: inquire_long_term_care_insurance
+  examples: |
+    - Long-term care insurance
+    - Coverage for nursing home care
+    - Planning for elderly care
+- intent: inquire_renters_insurance
+  examples: |
+    - Renters insurance policies
+    - Protecting personal belongings
+    - Liability coverage for renters
+- intent: inquire_homeowners_insurance
+  examples: |
+    - Homeowners insurance explained
+    - Coverage for property damage
+    - Home insurance options
+- intent: inquire_liability_insurance
+  examples: |
+    - Liability insurance types
+    - Business liability coverage
+    - Personal liability protection
+- intent: inquire_business_insurance
+  examples: |
+    - Business insurance policies
+    - Coverage for commercial risks
+    - Insuring your business assets
+- intent: inquire_marine_insurance
+  examples: |
+    - Marine insurance for cargo
+    - Shipping and transportation coverage
+    - Marine risks and policies
+- intent: inquire_aviation_insurance
+  examples: |
+    - Aviation insurance
+    - Coverage for aircraft and pilots
+    - Insuring aviation risks
+- intent: inquire_cyber_security_insurance
+  examples: |
+    - Cybersecurity insurance
+    - Protection against data breaches
+    - Safeguarding digital assets
+- intent: inquire_credit_insurance
+  examples: |
+    - Credit insurance policies
+    - Coverage for loan defaults
+    - Insuring credit risks
+- intent: inquire_mortgage_insurance
+  examples: |
+    - Mortgage insurance options
+    - PMI (Private Mortgage Insurance)
+    - Lender protection coverage
+- intent: inquire_title_insurance
+  examples: |
+    - Title insurance for real estate
+    - Protecting property ownership
+    - Title defects and claims
+- intent: inquire_workers_compensation
+  examples: |
+    - Workers' compensation insurance
+    - Coverage for workplace injuries
+    - Employer liability protection
+
+  #payment services
+- intent: process_payment
+  examples: |
+    - Make a payment
+    - Process a transaction
+    - Payment processing
+- intent: mobile_payment
+  examples: |
+    - How does mobile payment work?
+    - Pay using my phone
+    - Mobile wallet options
+- intent: peer_to_peer_transfer
+  examples: |
+    - Transfer money to a friend
+    - P2P payment
+    - Send funds to someone
+- intent: inquire_transaction_fee
+  examples: |
+    - What are the transaction fees?
+    - Fee for transferring money
+    - Transaction cost
+- intent: setup_automatic_payments
+  examples: |
+    - Enroll in automatic payments
+    - Set up recurring payments
+    - Schedule regular transfers
+- intent: cancel_payment
+  examples: |
+    - Cancel a payment
+    - Revoke a transaction
+    - Stop a transfer
+- intent: inquire_payment_status
+  examples: |
+    - Check payment status
+    - Is my payment processed?
+    - Payment confirmation
+- intent: report_payment_issue
+  examples: |
+    - Payment problem
+    - Issue with a transaction
+    - Payment not received
+- intent: request_refund
+  examples: |
+    - How to get a refund?
+    - Refund process
+    - Return payment
+- intent: add_payment_method
+  examples: |
+    - Add a new payment method
+    - Link a card to my account
+    - Register a payment option
+- intent: remove_payment_method
+  examples: |
+    - Remove a payment method
+    - Delete a saved card
+    - Unlink payment option
+- intent: update_payment_method
+  examples: |
+    - Change payment details
+    - Update card information
+    - Modify payment method
+- intent: confirm_payment_receipt
+  examples: |
+    - Confirm payment received
+    - Verify successful transaction
+    - Acknowledge payment
+- intent: inquire_exchange_rate
+  examples: |
+    - What's the exchange rate?
+    - Currency conversion rate
+    - Forex rates
+- intent: convert_currency
+  examples: |
+    - Convert currency
+    - Exchange money
+    - Calculate foreign exchange
+- intent: send_invoice
+  examples: |
+    - Create an invoice
+    - Bill a customer
+    - Invoice generation
+- intent: request_payment
+  examples: |
+    - Request money from someone
+    - Send a payment request
+    - Ask for payment
+- intent: split_bill
+  examples: |
+    - Split the bill
+    - Divide expenses
+    - Share costs
+- intent: schedule_payment
+  examples: |
+    - Set a payment date
+    - Schedule a transfer
+    - Payment timing
+- intent: check_payment_limit
+  examples: |
+    - What's my payment limit?
+    - Maximum transaction amount
+    - Payment threshold
+
+  #  financial planning
+- intent: budgeting_tools
+  examples: |
+    - Budgeting strategies
+    - Tools for managing expenses
+    - Creating a budget plan
+- intent: financial_advice
+  examples: |
+    - Seeking financial advice
+    - Consultation with a financial advisor
+    - Expert recommendations
+- intent: retirement_planning
+  examples: |
+    - Retirement savings strategies
+    - Planning for retirement
+    - Building a retirement fund
+- intent: debt_management
+  examples: |
+    - Managing debt
+    - Debt repayment strategies
+    - Reducing credit card balances
+- intent: savings_plan
+  examples: |
+    - Creating a savings plan
+    - Setting financial goals
+    - Saving for specific purposes
+- intent: investment_strategy
+  examples: |
+    - Investment planning
+    - Portfolio strategy
+    - Risk management in investments
+- intent: tax_planning
+  examples: |
+    - Tax-efficient financial planning
+    - Minimizing tax liability
+    - Year-end tax strategies
+- intent: estate_planning
+  examples: |
+    - Estate planning basics
+    - Wills and trusts
+    - Inheritance planning
+- intent: college_savings_plan
+  examples: |
+    - Saving for education
+    - College fund strategies
+    - 529 plans
+- intent: emergency_fund_planning
+  examples: |
+    - Building an emergency fund
+    - Financial safety net
+    - Covering unexpected expenses
+- intent: insurance_coverage_review
+  examples: |
+    - Reviewing insurance policies
+    - Assessing coverage needs
+    - Updating insurance plans
+- intent: financial_goal_setting
+  examples: |
+    - Setting financial objectives
+    - Defining short-term and long-term goals
+    - SMART goals
+- intent: wealth_preservation
+  examples: |
+    - Wealth preservation strategies
+    - Protecting assets
+    - Estate management
+- intent: charitable_giving_strategy
+  examples: |
+    - Charitable donations planning
+    - Giving back to the community
+    - Tax-efficient philanthropy
+- intent: mortgage_refinancing
+  examples: |
+    - Refinancing a mortgage
+    - Lowering interest rates
+    - Assessing mortgage terms
+- intent: credit_score_improvement
+  examples: |
+    - Boosting credit score
+    - Credit repair tips
+    - Building good credit
+- intent: retirement_account_review
+  examples: |
+    - Reviewing retirement accounts
+    - 401(k), IRA, and Roth IRA assessment
+    - Maximizing retirement contributions
+- intent: financial_health_checkup
+  examples: |
+    - Assessing financial health
+    - Financial well-being evaluation
+    - Identifying areas for improvement
+- intent: cash_flow_analysis
+  examples: |
+    - Analyzing cash flow
+    - Income and expenses assessment
+    - Cash flow management
+- intent: risk_tolerance_assessment
+  examples: |
+    - Determining risk tolerance
+    - Risk assessment in investments
+    - Balancing risk and return
+
+  #blockchain and cryptocurrency
+- intent: inquire_bitcoin
+  examples: |
+    - Tell me about Bitcoin
+    - How does Bitcoin work?
+    - What is the current price of Bitcoin?
+
+- intent: inquire_ethereum
+  examples: |
+    - Tell me about Ethereum
+    - How does Ethereum work?
+    - What is the current price of Ethereum?
+
+- intent: inquire_blockchain
+  examples: |
+    - What is blockchain?
+    - How does blockchain work?
+    - Can you explain blockchain technology?
+
+- intent: inquire_crypto_wallet
+  examples: |
+    - What is a crypto wallet?
+    - How does a crypto wallet work?
+    - Can you recommend a good crypto wallet?
+
+- intent: inquire_crypto_exchange
+  examples: |
+    - What is a crypto exchange?
+    - How does a crypto exchange work?
+    - Can you recommend a good crypto exchange?
+
+- intent: inquire_crypto_mining
+  examples: |
+    - What is crypto mining?
+    - How does crypto mining work?
+    - Is crypto mining profitable?
+
+- intent: inquire_crypto_security
+  examples: |
+    - How secure is cryptocurrency?
+    - What are the risks of using cryptocurrency?
+    - How can I protect my cryptocurrency?
+
+- intent: inquire_initial_coin_offering
+  examples: |
+    - What is an initial coin offering?
+    - How does an initial coin offering work?
+    - Can you explain the process of an initial coin offering?
+
+- intent: inquire_crypto_regulations
+  examples: |
+    - What are the regulations for cryptocurrency?
+    - How is cryptocurrency regulated?
+    - Can you explain the legal aspects of cryptocurrency?
+
+- intent: inquire_crypto_taxes
+  examples: |
+    - How are cryptocurrencies taxed?
+    - Do I have to pay taxes on my cryptocurrency?
+    - Can you explain the tax implications of cryptocurrency?
+
+- intent: inquire_stablecoins
+  examples: |
+    - What are stablecoins?
+    - How do stablecoins work?
+    - Can you explain the concept of stablecoins?
+
+- intent: inquire_defi
+  examples: |
+    - What is DeFi?
+    - How does DeFi work?
+    - Can you explain the concept of DeFi?
+
+- intent: inquire_nft
+  examples: |
+    - What is an NFT?
+    - How does an NFT work?
+    - Can you explain the concept of NFTs?
+
+- intent: inquire_crypto_portfolio
+  examples: |
+    - How can I manage my crypto portfolio?
+    - What should I include in my crypto portfolio?
+    - Can you give me some tips for managing my crypto portfolio?
+
+- intent: inquire_crypto_trading
+  examples: |
+    - How can I start trading cryptocurrency?
+    - What should I know before trading cryptocurrency?
+    - Can you give me some tips for trading cryptocurrency?
+
+- intent: inquire_crypto_market_cap
+  examples: |
+    - What is the market cap of cryptocurrency?
+    - How is the market cap of cryptocurrency calculated?
+    - Can you explain the concept of market cap in cryptocurrency?
+
+- intent: inquire_crypto_price
+  examples: |
+    - How is the price of cryptocurrency determined?
+    - What factors affect the price of cryptocurrency?
+    - Can you explain how cryptocurrency prices fluctuate?
+
+- intent: inquire_crypto_investment
+  examples: |
+    - How can I invest in cryptocurrency?
+    - What should I know before investing in cryptocurrency?
+    - Can you give me some tips for investing in cryptocurrency?
+
+- intent: inquire_crypto_savings
+  examples: |
+    - Can I use cryptocurrency for savings?
+    - How can I save money with cryptocurrency?
+    - Can you give me some tips for saving money with cryptocurrency?
+
+- intent: inquire_crypto_loans
+  examples: |
+    - Can I get a loan with cryptocurrency?
+    - How do cryptocurrency loans work?
+    - Can you explain the process of getting a cryptocurrency loan?
+
+  # regulatory compliance
+
+  #Absa Bank questions
+- intent: ask_absa_operating_hours
+  examples: |
+    - What are the operating hours of ABSA bank?
+
+- intent: ask_absa_interest_rates
+  examples: |
+    - Can you tell me the interest rates for ABSA bank's savings account?
+
+- intent: ask_absa_minimum_balance
+  examples: |
+    - What is the minimum balance required for a current account at ABSA bank?
+
+- intent: ask_absa_online_banking
+  examples: |
+    - Does ABSA bank offer online banking services?
+
+- intent: ask_absa_open_account
+  examples: |
+    - How can I open a new account with ABSA bank?
+
+- intent: ask_absa_loan_types
+  examples: |
+    - What types of loans does ABSA bank offer?
+
+- intent: ask_absa_credit_card_options
+  examples: |
+    - Can you tell me about ABSA bank's credit card options?
+
+- intent: ask_absa_mortgage_application
+  examples: |
+    - What is the process to apply for a mortgage at ABSA bank?
+
+- intent: ask_absa_investment_services
+  examples: |
+    - Does ABSA bank offer any investment services?
+
+- intent: ask_absa_customer_service
+  examples: |
+    - How can I contact ABSA bank's customer service?
+- intent: inquire_absa_reward_program
+  examples: |
+    - What is Absa's loyalty program about?
+    - Can you tell me about Absa's reward program?
+    - What are Reward Points at Absa?
+    - Explain the loyalty program benefits at Absa.
+    - Tell me more about Absa's loyalty program.
+
+- intent: redeem_absa_reward_points
+  examples: |
+    - How can I redeem Reward Points at Absa?
+    - What can I do with my Reward Points from Absa?
+    - Can I use Reward Points from Absa for purchases?
+    - Explain the redemption process for Reward Points at Absa.
+    - Tell me about redeemable benefits with Reward Points from Absa.
+
+- intent: absa_reward_points_expiry
+  examples: |
+    - Do Reward Points from Absa expire?
+    - What is the expiry period for Reward Points at Absa?
+    - How long are Reward Points from Absa valid?
+    - When do Reward Points from Absa expire?
+    - Explain the validity period of Reward Points from Absa.
+
+- intent: change_absa_reward_rules
+  examples: |
+    - Can Absa change Reward Points rules?
+    - Are there any changes to the validity of Reward Points from Absa?
+    - How often do the reward program rules at Absa change?
+    - Tell me about updates to the reward program rules at Absa.
+    - Explain changes to the redemption rules at Absa.
+
+- intent: restrict_earning_absa_reward_points
+  examples: |
+    - Are there any restrictions on earning Reward Points at Absa?
+    - Can account activity affect Reward Points earning at Absa?
+    - How is earning Reward Points restricted at Absa?
+    - Explain limitations on earning Reward Points at Absa.
+    - Tell me about earning restrictions in the loyalty program at Absa.
+
+- intent: reverse_absa_reward_points
+  examples: |
+    - Can Reward Points from Absa be reversed?
+    - Under what circumstances are Reward Points from Absa reversed?
+    - How do I reverse Reward Points from Absa?
+    - Tell me about reversing transactions with Reward Points from Absa.
+    - Explain the reversal process for Reward Points from Absa.
+
+- intent: terminate_absa_reward_points
+  examples: |
+    - Can Absa terminate Reward Points?
+    - Under what conditions are Reward Points from Absa terminated?
+    - How do I know if my Reward Points from Absa are terminated?
+    - Tell me about the termination of Reward Points from Absa.
+    - Explain the reasons for terminating Reward Points from Absa.
+
+- intent: disqualify_absa_participation
+  examples: |
+    - Can participation in loyalty programs from Absa be disqualified?
+    - How can I be disqualified from the loyalty program at Absa?
+    - What leads to disqualification from loyalty programs at Absa?
+    - Explain disqualification from loyalty programs at Absa.
+    - Tell me about reasons for disqualification at Absa.
+
+- intent: change_or_terminate_absa_program
+  examples: |
+    - Can the loyalty program at Absa be changed or terminated?
+    - Is there a possibility of changes to the loyalty program at Absa?
+    - How often does Absa change loyalty programs?
+    - Tell me about possible termination of loyalty programs at Absa.
+    - Explain the process of changing or terminating loyalty programs at Absa.
+- intent: absa_account_opening
+  examples: |
+    - How do I create an account with Absa?
+    - Can you guide me through the account opening process at Absa?
+    - What steps do I need to follow to open an account at Absa?
+    - I'm interested in opening an account with Absa. What should I do?
+    - How can I start banking with Absa?
+    - Explain the account opening process at Absa, please.
+    - What's the procedure for opening an account at Absa?
+
+# HFC Bank
+- intent: ask_hfc_operating_hours
+  examples: |
+    - What are the operating hours of HFC bank?
+    - Can you tell me when HFC bank is open?
+    - What are the business hours for HFC bank?
+
+- intent: ask_hfc_interest_rates
+  examples: |
+    - What are the interest rates for savings accounts at HFC bank?
+    - Can you provide information about the interest rates offered by HFC bank?
+    - How much interest does HFC bank pay on savings accounts?
+
+- intent: ask_hfc_minimum_balance
+  examples: |
+    - What is the minimum balance required for a current account at HFC bank?
+    - Can you tell me the minimum balance needed to maintain a current account with HFC bank?
+    - What is the minimum account balance for HFC bank's current accounts?
+
+- intent: ask_hfc_online_banking
+  examples: |
+    - Does HFC bank offer online banking services?
+    - Can I access my account online with HFC bank?
+    - Is there an online banking platform provided by HFC bank?
+
+- intent: ask_hfc_open_account
+  examples: |
+    - How can I open a new account with HFC bank?
+    - What are the steps to open an account at HFC bank?
+    - Is there an online account opening option available with HFC bank?
+
+- intent: ask_hfc_loan_types
+  examples: |
+    - What types of loans does HFC bank offer?
+    - Can you provide information about the loan products available at HFC bank?
+    - What loan options are available for customers of HFC bank?
+
+- intent: ask_hfc_credit_card_options
+  examples: |
+    - Can you tell me about HFC bank's credit card options?
+    - What credit card products does HFC bank offer?
+    - Are there different types of credit cards available from HFC bank?
+
+- intent: ask_hfc_mortgage_application
+  examples: |
+    - What is the process to apply for a mortgage at HFC bank?
+    - How can I apply for a mortgage with HFC bank?
+    - Are there specific requirements for mortgage applications at HFC bank?
+
+- intent: ask_hfc_investment_services
+  examples: |
+    - Does HFC bank offer any investment services?
+    - Can I invest through HFC bank?
+    - What investment options are available with HFC bank?
+
+- intent: ask_hfc_customer_service
+  examples: |
+    - How can I contact HFC bank's customer service?
+    - What are the customer service contact details for HFC bank?
+    - Is there a customer support hotline for HFC bank?
+
+- intent: hfc_account_opening
+  examples: |
+    - How do I create an account with HFC?
+    - Can you guide me through the account opening process at HFC?
+    - What steps do I need to follow to open an account at HFC?
+    - I'm interested in opening an account with HFC. What should I do?
+    - How can I start banking with HFC?
+    - Explain the account opening process at HFC, please.
+    - What's the procedure for opening an account at HFC?
+
+- intent: hfc_choose_account_type
+  examples: |
+    - I'm interested in opening a savings account.
+    - Which types of accounts does HFC offer?
+    - Can you help me choose the right account type for me?
+
+# Bank of India Kenya
+- intent: bank_of_india_account_opening
+  examples: |
+    - How do I create an account in Bank of India Kenya?
+    - Can you guide me through the account opening process in Bank of India?
+    - What are the steps to open an account with Bank of India in Kenya?
+    - I want to open an account with Bank of India. What do I need to do?
+    - How can I start banking with Bank of India in Kenya?
+    - Can you explain how to open a Bank of India account?
+    - What's involved in opening an account at Bank of India Kenya?

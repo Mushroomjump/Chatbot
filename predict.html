@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+</head>
+
+<body>
+    <h1>Chatbot</h1>
+    <div id="chat-container">
+        <div id="chat-history"></div>
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var userInput = document.getElementById("user-input").value;
+            // Make a POST request to your Flask backend with the user input
+            fetch("/", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        data: userInput
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Display the response from the backend in the chat history
+                    var chatHistory = document.getElementById("chat-history");
+                    chatHistory.innerHTML += "<p>User: " + userInput + "</p>";
+                    chatHistory.innerHTML += "<p>Bot: " + data.result + "</p>";
+                    // Clear the user input field
+                    document.getElementById("user-input").value = "";
+                })
+                .catch(error => console.error("Error:", error));
+        }
+
+    </script>
+</body>
+
+</html>

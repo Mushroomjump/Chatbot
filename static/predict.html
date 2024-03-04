@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+</head>
+
+<body>
+    <h1>Chatbot</h1>
+    <div id="chat-container">
+        <div id="chat-history"></div>
+        <form id="chat-form" method="POST" action="/">
+            <input type="text" id="user-input" name="user_input" placeholder="Hi I am a Fintech Chatbot What would You like to know">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("chat-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+            sendMessage();
+        });
+
+        function sendMessage() {
+            var userInput = document.getElementById("user-input").value;
+            fetch("/", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        user_input: userInput // Use the correct key
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    var chatHistory = document.getElementById("chat-history");
+                    chatHistory.innerHTML += "<p>User: " + userInput + "</p>";
+                    chatHistory.innerHTML += "<p>Bot: " + data.result + "</p>";
+                    document.getElementById("user-input").value = ""; // Clear the input field
+                })
+                .catch(error => console.error("Error:", error));
+        }
+
+    </script>
+</body>
+
+</html>
